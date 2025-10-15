@@ -1,0 +1,31 @@
+.__filters {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    background-color: var(--color-white);
+}
+
+.__filters::-webkit-scrollbar {
+    display: none;
+}
+
+.__filters:first-child {
+    padding-left: 1rem;
+}
+
+.__filters .__filter {
+    cursor: pointer;
+    font-size: .85rem;
+    text-wrap: nowrap;
+    padding: .5rem 1rem;
+    margin-right: .8rem;
+    background-color: var(--color-bg);
+    border-radius: var(--radius-rounded);
+}
+
+.__filters .__filter--active {
+    font-weight: bold;
+    background-color: var(--color-green);
+}

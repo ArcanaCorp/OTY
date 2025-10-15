@@ -1,0 +1,28 @@
+.__btn_float_wp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: grid;
+    width: 60px;
+    height: 60px;
+    z-index: 10001;
+    place-items: center;
+    background-color: var(--color-green);
+    border-radius: var(--radius-rounded);
+}
+
+.__btn_float_wp .tabler-icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--color-white);
+}
+
+.__main {
+    width: 100dvw;
+    overflow-y: auto;
+    height: calc(100dvh - 60px);
+}
+
+.__main::-webkit-scrollbar {
+    display: none;
+}
