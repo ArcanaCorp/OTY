@@ -5,9 +5,11 @@ import { filterList } from "../../../config/config";
 
 import './styles/newproduct.css'
 import { addNewProduct } from "../../services/product.service";
+import { useProduct } from "../../context/ProductContext";
 
 export default function NewProduct ({ onactive }) {
 
+    const { getListProducts } = useProduct();
     const [ previewImage, setPreviewImage ] = useState('')
     const [ newP, setNewP ] = useState({
         image: '',
@@ -124,8 +126,8 @@ export default function NewProduct ({ onactive }) {
             setLoading(true)
             const data = await addNewProduct(newP);
             if (!data.ok) return toast.warning(data.message)
-                console.log(data);
-                
+                toast.success(`Se creó el producto con éxito`)
+                getListProducts();
         } catch (error) {
             toast.error(error.message)
         } finally {

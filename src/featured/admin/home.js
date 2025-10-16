@@ -1,6 +1,7 @@
 import { IconBuildingStore, IconShoppingBagCheck } from "@tabler/icons-react";
 import './styles/home.css'
 import { Outlet, useLocation } from "react-router-dom";
+import { Toaster } from "sonner";
 
 export default function AdminHome () {
 
@@ -30,6 +31,8 @@ export default function AdminHome () {
                     </li>
                 </ul>
             </footer>
+
+            <Toaster position="top-center" richColors duration={3000} />
 
         </>
 
