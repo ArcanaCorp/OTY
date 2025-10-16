@@ -29,3 +29,15 @@
     font-weight: bold;
     background-color: var(--color-green);
 }
+
+@media (min-width: 768px) {
+    .__filters {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .__filters {
+        justify-content: center;
+    }
+}

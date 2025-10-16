@@ -1,0 +1,117 @@
+.__header {
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-white);
+}
+
+.__header .__box {
+    width: 90%;
+    margin: auto;
+    gap: 1rem;
+    height: inherit;
+}
+
+.__header_cart .__box {
+    justify-content: flex-start;
+}
+
+.__header .__box .__btn_back {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    place-items: center;
+    border-radius: var(--radius-rounded);
+}
+
+.__main_cart {
+    width: 100dvw;
+    padding: 1rem;
+    overflow-y: auto;
+    height: calc(100dvh - 120px);
+}
+
+.__main_cart::-webkit-scrollbar {
+    display: none;
+}
+
+.__main_cart .__toogle {
+    display: flex;
+    gap: 1rem;
+    padding: .4rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    border-radius: var(--radius-rounded);
+    background-color: var(--color-white);
+}
+
+.__main_cart .__toogle button {
+    width: 100%;
+    height: 40px;
+    border-radius: var(--radius-rounded);
+}
+
+.__main_cart .__toogle button.active {
+    font-weight: bold;
+    background-color: var(--color-green);
+}
+
+.__main_cart .__summary {
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #F0F0F0;
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+}
+
+.__main_cart .__summary h3 {
+    margin-bottom: .8rem;
+}
+
+.__main_cart .__summary ul {
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+
+.__main_cart .__summary ul li {
+    width: 100%;
+    display: flex;
+    padding: .5rem 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.__main_cart .__summary ul li .__fpx {
+    font-weight: bold;
+    font-size: .8rem;
+    color: #888888;
+}
+
+.__footer_cart {
+    width: 100%;
+    height: 60px;
+}
+
+.__footer_cart button {
+    width: 100%;
+    height: inherit;
+    font-weight: bold;
+    background-color: var(--color-green);
+}
+
+
+@media (min-width: 768px) {
+    .__product_cart,
+    .__main_cart .__summary {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .__product_cart,
+    .__main_cart .__summary {
+        width: 60%;
+    }
+}

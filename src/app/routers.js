@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import LayoutRoot from "../featured/layout";
 import Home from "../featured/client/home";
+import Cart from "../featured/client/cart";
+import AdminHome from "../featured/admin/home";
+import Products from "../featured/admin/views/products";
 
 const router = createBrowserRouter([
     {
@@ -12,16 +15,22 @@ const router = createBrowserRouter([
                 element: <Home/>
             },
             {
-                path: '/cart'
+                path: '/cart',
+                element: <Cart/>
             }
         ]
     },
     {
         path: '/admin',
-        element: <LayoutRoot/>,
+        element: <AdminHome/>,
         children: [
             {
                 index: true,
+                element: <Products/>,
+            },
+            {
+                path: '/admin/orders',
+                element: <h1>Orders</h1>
             }
         ]
     }

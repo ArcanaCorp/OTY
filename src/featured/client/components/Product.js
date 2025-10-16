@@ -6,11 +6,16 @@ import { useCart } from '../../context/CartContext'
 import placeholder from '../../../shared/img/placeholder.jpg'
 
 import './styles/product.css'
+import { URL_API } from '../../../config/config';
 export default function Product({ product }) {
+
+    console.log(product);
+    
 
     const { cart, addProduct, removeProduct } = useCart();
 
-    const [ amount, setAmount ] = useState(0)
+    const info = cart.find((c) => c.id === product.id || c.code === product.code);
+    const [ amount, setAmount ] = useState(info?.amount || 0)
 
     const isInCart = cart.some((c) => c.id === product.id || c.code === product.code);
     const btnText = isInCart ? 'Agregado' : 'Agregar';
@@ -35,7 +40,7 @@ export default function Product({ product }) {
         <li className='__product'>
             <div className='__product_img'>
                 <span className='__badge'>{product?.category}</span>
-                <img src={product?.image ? product?.image : placeholder} alt={`Foto del producto ${product?.name} ${product?.text}`} />
+                <img src={product?.image ? `${URL_API}${product?.image}` : placeholder} alt={`Foto del producto ${product?.name} ${product?.text}`} />
             </div>
             <div className='__product_txt'>
                 <h3 className='__name'>{product?.name}</h3>
